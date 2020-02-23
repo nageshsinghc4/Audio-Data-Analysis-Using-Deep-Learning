@@ -1,5 +1,5 @@
 #pip install librosa
-
+#How to handle audio data
 import librosa
 audio_data = '/Users/nageshsinghchauhan/Downloads/ML/music_classification/gruesome.wav'
 x , sr = librosa.load(audio_data)
@@ -38,7 +38,6 @@ ipd.Audio(x, rate=sr) # load a NumPy array
 Saving the audio
 librosa.output.write_wav('tone_220.wav', x, sr)
 
-
 #Feature extraction
 # 1.Zero Crossing Rate : The zero crossing rate is the rate of sign-changes along a signal, i.e., the rate at which the signal changes from positive to negative or back.
 # Load the signal
@@ -70,13 +69,11 @@ def normalize(x, axis=0):
 librosa.display.waveplot(x, sr=sr, alpha=0.4)
 plt.plot(t, normalize(spectral_centroids), color='r')
 
-
 #3. Spectral Rolloff
 #It is a measure of the shape of the signal. It represents the frequency below which a specified percentage of the total spectral energy.
 spectral_rolloff = librosa.feature.spectral_rolloff(x+0.01, sr=sr)[0]
 librosa.display.waveplot(x, sr=sr, alpha=0.4)
 plt.plot(t, normalize(spectral_rolloff), color='r')
-
 
 #4. Spectral Bandwidth
 spectral_bandwidth_2 = librosa.feature.spectral_bandwidth(x+0.01, sr=sr)[0]
@@ -99,7 +96,6 @@ print mfccs.shape
 #Displaying  the MFCCs:
 librosa.display.specshow(mfccs, sr=sr, x_axis='time')
 
-
 #5. Chroma Frequencies : Chroma features are an interesting and powerful representation for music audio in which the entire spectrum is projected onto 12 bins representing the 12 distinct semitones (or chroma) of the musical octave.
 # Loadign the file
 x, sr = librosa.load('/Users/nageshsinghchauhan/Downloads/ML/music_classification/gruesome.wav')
@@ -109,7 +105,7 @@ plt.figure(figsize=(15, 5))
 librosa.display.specshow(chromagram, x_axis='time', y_axis='chroma', hop_length=hop_length, cmap='coolwarm')
 
 """
-In his section, we will try to model a classifier to classify songs into different 	genres. Let us assume a scenario in which, for some reason, we find a bunch of randomly named MP3 files on our hard disk, which are assumed to contain music. Our task is to sort them according to the music genre into different folders such as jazz, classical, country, pop, rock, and metal.
+In his section, we will model a classifier to classify songs into different genres. Let us assume a scenario in which, for some reason, we find a bunch of randomly named MP3 files on our hard disk, which are assumed to contain music. Our task is to sort them according to the music genre into different folders such as jazz, classical, country, pop, rock, and metal.
 Dataset
 """
 import pandas as pd
@@ -147,7 +143,6 @@ from keras.callbacks import EarlyStopping
 Extracting music and features
 Dataset
 We use GTZAN genre collection dataset for classification.
-
 The dataset consists of 10 genres i.e
 Blues Classical Country Disco Hiphop Jazz Metal Pop Reggae Rock
 Each genre contains 100 songs. Total dataset: 1000 songs
@@ -172,8 +167,7 @@ for g in genres:
 All the audio files get converted into their respective spectrograms .WE can noe easily extract features from them.
 """
 """
-Extracting features from Spectrogram
-We will extract
+Extracting features from Spectrogram and they are:
 
 Mel-frequency cepstral coefficients (MFCC)(20 in number)
 Spectral Centroid,
@@ -181,8 +175,6 @@ Zero Crossing Rate
 Chroma Frequencies
 Spectral Roll-off.
 """
-
-
 
 header = 'filename chroma_stft rmse spectral_centroid spectral_bandwidth rolloff zero_crossing_rate'
 for i in range(1, 21):
@@ -217,7 +209,6 @@ for g in genres:
             writer = csv.writer(file)
             writer.writerow(to_append.split())
 
-
 #Analysing the Data in Pandas¶
 data = pd.read_csv('dataset.csv')
 data.head()
@@ -243,7 +234,6 @@ model.add(layers.Dense(256, activation='relu', input_shape=(X_train.shape[1],)))
 model.add(layers.Dense(128, activation='relu'))
 model.add(layers.Dense(64, activation='relu'))
 model.add(layers.Dense(10, activation='softmax'))
-
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
@@ -255,10 +245,7 @@ classifier = model.fit(X_train,
 
 test_loss, test_acc = model.evaluate(X_test,y_test)
 print('test_acc: ',test_acc)
-#Tes accuracy is less than training dataa accuracy. This hints at Overfitting
-
 #Validating our approach¶
-
 x_val = X_train[:200]
 partial_x_train = X_train[200:]
 
