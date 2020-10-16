@@ -2,19 +2,19 @@
 
 Audio data analysis is about analyzing and understanding audio signals captured by digital devices, with numerous applications in the enterprise, healthcare, productivity, and smart cities.
 
-So in this repository we have done audio data analysis and extracted necessary features from a sound/audio file. Also build an Artificial Neural Network(ANN) and Convolutional Neural Network(CNN) for classifying music genre.
+So in this repository we have done audio data analysis and extracted necessary features from a sound/audio file. Also build an Artificial Neural Network(**ANN**) and Convolutional Neural Network(**CNN**) for classifying music genre.
 
 ![NN](https://github.com/nageshsinghc4/Audio-Data-Analysis-Using-Deep-Learning/blob/master/images.jpeg)
 
 
 Pre requisites:
 
-1. Librosa: to analyze audio signals in general but geared more towards music. It includes the nuts and bolts to build a MIR(Music information retrieval) system. 
+1. **Librosa**: to analyze audio signals in general but geared more towards music. It includes the nuts and bolts to build a MIR(Music information retrieval) system. 
 
 ```pip install librosa```
 
 
-2. IPython.display.Audio: Lets you play audio directly in a jupyter notebook.
+2. **IPython.display.Audio**: Lets you play audio directly in a jupyter notebook.
 
 ## Important termanologies:
 
