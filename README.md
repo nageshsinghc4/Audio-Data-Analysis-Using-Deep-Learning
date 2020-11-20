@@ -33,3 +33,4 @@ The spectral features (frequency-based features), which are obtained by converti
 5. Mel-Frequency Cepstral Coefficients(MFCCs)
 6. Chroma feature
 
+Please consider reading these articles to understand Audio data analysis and its step by step implementation [here](https://www.theaidream.com/post/audio-data-analysis-using-deep-learning-with-python-part-1).
