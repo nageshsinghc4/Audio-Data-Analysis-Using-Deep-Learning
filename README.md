@@ -2,7 +2,7 @@
 
 Audio data analysis is about analyzing and understanding audio signals captured by digital devices, with numerous applications in the enterprise, healthcare, productivity, and smart cities.
 
-So in this repository we have done audio data analysis and extracted necessary features from a sound/audio file. Also build an Artificial Neural Network(**ANN**) and Convolutional Neural Network(**CNN**) for classifying music genre.
+In this repository we have done audio data analysis and extracted necessary features from a sound/audio file. Also build an Artificial Neural Network(**ANN**) and Convolutional Neural Network(**CNN**) for classifying music genre.
 
 ![NN](https://github.com/nageshsinghc4/Audio-Data-Analysis-Using-Deep-Learning/blob/master/images.jpeg)
 
