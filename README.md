@@ -1,4 +1,4 @@
-# Audio-Data-Analysis-Using-Deep-Learning
+# Audio Data Analysis Using Deep Learning
 
 Audio data analysis is about analyzing and understanding audio signals captured by digital devices, with numerous applications in the enterprise, healthcare, productivity, and smart cities.
 
